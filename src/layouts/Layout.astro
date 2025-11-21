@@ -1,0 +1,35 @@
+---
+import "../styles/global.css";
+
+const { title } = Astro.props; //Aquí declaro la propiedad 'title' para usarla en los layouts y componentes
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title ? title + " | Portfolio" : "Portfolio"}</title>
+  </head>
+  <body class="bg-blue-200 w-full">
+    <div class="bg-red-400 w-full fixed">
+      <header class="grid grid-cols-12 w-full px-7 py-5">
+        <a class="col-span-3" href="/"><h1 class="font-semibold">Web de Mirass</h1></a>
+        <nav class="flex col-span-9 justify-end gap-6">
+          <a href="/"><span class="uppercase">Inicio</span></a>
+          <a href="#"><span class="uppercase">Servicios</span></a>
+          <a href="#"><span class="uppercase">Proyectos</span></a>
+          <a href="/about"><span class="uppercase">Sobre mí</span></a>
+          <a href="#"><span class="uppercase">Contacto</span></a>
+        </nav>
+      </header>
+    </div>
+
+    <main class="">
+      <slot />
+    </main>
+
+    <footer class="text-center p-5">&copy; 2025 Web de Mirass</footer>
+  </body>
+</html>
