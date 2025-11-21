@@ -1,16 +1,77 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Project from "../components/Project.astro";
+import Hero from "../components/Hero.astro";
 
+const projects = [
+  {
+    title: "La Torre de Oro",
+    description: "Portal de Administración de loterías",
+    techs: ["WordPress", "Elementor", "JavaScript", "HTML5"],
+    completed: true,
+    url: "https://latorredeoro.com",
+    img: "img/projects/landing-loteria.png",
+  },
+  {
+    title: "David Martínez Psicología",
+    description: "Portal de Psicólogo",
+    techs: ["WordPress", "Elementor"],
+    completed: false,
+    url: "https://davidmartinezpsicologia.com",
+    img: "img/projects/landing-david.png",
+  },
+  {
+    title: "Papel Pintado Flores",
+    description: "Portal de ventas de afiliados de Papel pintado de flores",
+    techs: ["Astro", "Markdown"],
+    completed: false,
+    url: "https://papelpintadoflores.com.com",
+    img: "img/projects/landing-papel.png",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Inicio">
+  <Hero />
+
+  <section class="">
+    <header>
+      <h2 class="text-4xl font-bold text-center mt-10">Proyectos destacados</h2>
+    </header>
+
+    <section class="flex justify-center gap-12 bg-emerald-800">
+      {
+        projects.map((project) => (
+          <Project
+            title={project.title}
+            description={project.description}
+            techs={project.techs}
+            completed={project.completed}
+            url={project.url}
+            img={project.img}
+          />
+        ))
+      }
+    </section>
+  </section>
+  <section>
+    <header>
+      <h2 class="text-4xl font-bold text-center mt-10">Proyecto técnico</h2>
+    </header>
+  </section>
+  <section>
+    <header>
+      <h2 class="text-4xl font-bold text-center mt-10">Experiencia</h2>
+    </header>
+  </section>
+  <section>
+    <header>
+      <h2 class="text-4xl font-bold text-center mt-10">Tecnologías</h2>
+    </header>
+  </section>
+  <section>
+    <header>
+      <h2 class="text-4xl font-bold text-center mt-10">Contacto</h2>
+    </header>
+  </section>
+</Layout>
