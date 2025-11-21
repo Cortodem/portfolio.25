@@ -1,0 +1,70 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const text = "Bienvenido a mi sitio web"; // Texto que se mostrará
+const typingSpeed = 100; // Velocidad de escritura en milisegundos
+---
+
+<script>
+  const text = `Bienvenido a mi sitio web`; // Texto a escribir
+  const typingSpeed = 100; // Velocidad de escritura
+  let index = 0;
+
+  function type() {
+    if (text == null) return;
+    const el = document.getElementById("typed-text");
+    if (index < text.length && el) {
+      el.innerHTML += text.charAt(index);
+      index++;
+      setTimeout(type, typingSpeed);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    type();
+  });
+</script>
+
+<style>
+  .typing-effect {
+    border-left: 2px solid; /* Simula un cursor */
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+  }
+</style>
+<Layout title="Sobre mí">
+  <section class="flex">
+    <div>
+      <span id="typed-text"></span>
+    </div>
+    <div class="typing-effect animate-pulse">
+      
+    </div>
+  </section>
+
+  <article>
+    <header>
+      <h2>Sobre mí</h2>
+    </header>
+    <main>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum,
+        incidunt magni iste eos laboriosam tempora. Dolores, enim obcaecati sint
+        provident odio veritatis earum fugiat perferendis fugit est, pariatur
+        odit debitis. Libero totam, laboriosam maxime magnam corrupti rerum
+        aperiam, perferendis id, distinctio officia maiores. Saepe distinctio
+        nesciunt eveniet eaque commodi corrupti, quisquam quidem accusamus!
+        Dolorem animi, fugiat consequatur ut similique error.
+      </p>
+    </main>
+    <footer>
+      3 highlights de iconos:
+      <ul>
+        <li>Frontend</li>
+        <li>Optimización</li>
+        <li>Web real</li>
+      </ul>
+    </footer>
+  </article>
+</Layout>
