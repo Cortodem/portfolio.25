@@ -41,3 +41,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## Colores:
+Azul	Confianza y calma	#007BFF
+Verde	Crecimiento y generosidad	#28A745
+Gris	Neutralidad y equilibrio	#6C757D
+Blanco	Pureza y simplicidad	#FFFFFF
